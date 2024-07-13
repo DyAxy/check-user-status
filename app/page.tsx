@@ -20,9 +20,7 @@ export default function Home() {
   }
   useEffect(() => {
     if (value && Array.isArray(value)) {
-      const user = value[0]
       const flow = []
-      flow.push('用户：' + value[0].user_id)
       flow.push('上传：' + filesize(value[0].u, { standard: "jedec" }))
       flow.push('下载：' + filesize(value[0].d, { standard: "jedec" }))
       flow.push('总计：' + filesize(value[0].total, { standard: "jedec" }))
@@ -64,7 +62,6 @@ export default function Home() {
       <Button onPress={handleButton} isLoading={isLoading}>
         查询
       </Button>
-      <Textarea value={JSON.stringify(value)} />
       <Textarea value={text} />
     </main>
   );
